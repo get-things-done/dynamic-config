@@ -1,7 +1,6 @@
 <?php
 namespace GetThingsDone\DynamicConfig;
 
-use GetThingsDone\DynamicConfig\DynamicConfig;
 use GetThingsDone\DynamicConfig\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -14,12 +13,12 @@ class RetrieveDynamicConfigTest extends TestCase
     {
         \GetThingsDone\DynamicConfig\Models\DynamicConfig::create([
             'key' => 'logo',
-            'value' => ['filename' => 'logo.png']
+            'value' => ['filename' => 'logo.png'],
         ]);
 
         $this->assertEquals(
             [
-                'logo' => ['filename' => 'logo.png']
+                'logo' => ['filename' => 'logo.png'],
             ],
             app(DynamicConfig::class)->all()
         );
@@ -30,7 +29,7 @@ class RetrieveDynamicConfigTest extends TestCase
     {
         \GetThingsDone\DynamicConfig\Models\DynamicConfig::create([
             'key' => 'logo',
-            'value' => ['filename' => 'logo.png']
+            'value' => ['filename' => 'logo.png'],
         ]);
 
         $this->assertEquals(

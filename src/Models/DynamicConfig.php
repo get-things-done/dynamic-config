@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 class DynamicConfig extends Model
 {
     protected $fillable = [
-        'key', 'value'
+        'key', 'value',
     ];
 
     protected $casts = [
-        'value' => 'array'
+        'value' => 'array',
     ];
 }

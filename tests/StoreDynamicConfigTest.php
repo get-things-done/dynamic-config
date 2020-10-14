@@ -2,8 +2,8 @@
 
 namespace GetThingsDone\DynamicConfig\Tests;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use GetThingsDone\DynamicConfig\Models\DynamicConfig;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class StoreDynamicConfigTest extends TestCase
 {
@@ -14,12 +14,12 @@ class StoreDynamicConfigTest extends TestCase
     {
         DynamicConfig::create([
             'key' => 'logo',
-            'value' => ['filename' => 'logo.png']
+            'value' => ['filename' => 'logo.png'],
         ]);
 
-        $this->assertDatabaseHas('dynamic_configs',[
+        $this->assertDatabaseHas('dynamic_configs', [
             'key' => 'logo',
-            'value' => json_encode(['filename' => 'logo.png'])
+            'value' => json_encode(['filename' => 'logo.png']),
         ]);
     }
 }
