@@ -2,8 +2,8 @@
 
 namespace GetThingsDone\DynamicConfig;
 
-use Illuminate\Support\Arr;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Support\Arr;
 
 class DynamicConfig implements Repository
 {

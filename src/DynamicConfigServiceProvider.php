@@ -2,9 +2,8 @@
 
 namespace GetThingsDone\DynamicConfig;
 
-use Illuminate\Support\ServiceProvider;
-use GetThingsDone\DynamicConfig\DynamicConfig;
 use GetThingsDone\DynamicConfig\Commands\DynamicConfigCommand;
+use Illuminate\Support\ServiceProvider;
 
 class DynamicConfigServiceProvider extends ServiceProvider
 {
