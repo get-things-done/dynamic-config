@@ -38,8 +38,24 @@ return [
 ## Usage
 
 ``` php
-$dynamic-config = new GetThingsDone\DynamicConfig();
-echo $dynamic-config->echoPhrase('Hello, GetThingsDone!');
+//Determine if the given dynamic configuration value exists.
+app('dynamic_config')->has('key');
+
+//Get the specified dynamic configuration value.
+app('dynamic_config')->get('key');
+
+//Get all of the dynamic configuration items for the application.
+app('dynamic_config')->all();
+
+//Set a given dynamic configuration value.
+app('dynamic_config')->set('key','value');
+
+//Prepend a value onto an array dynamic configuration value.
+app('dynamic_config')->prepend('key','value');
+
+//Push a value onto an array dynamic configuration value.
+app('dynamic_config')->push('key','value');
+
 ```
 
 ## Testing
