@@ -2,8 +2,8 @@
 
 namespace GetThingsDone\DynamicConfig;
 
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Arr;
+use Illuminate\Contracts\Config\Repository;
 
 class DynamicConfig implements Repository
 {
@@ -25,7 +25,7 @@ class DynamicConfig implements Repository
      */
     public function has($key)
     {
-        return Arr::has($this->config);
+        return Arr::has($this->config,$key);
     }
 
     /**

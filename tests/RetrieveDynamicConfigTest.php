@@ -37,4 +37,15 @@ class RetrieveDynamicConfigTest extends TestCase
             app('dynamic_config')->get('logo.filename')
         );
     }
+
+    /** @test */
+    public function it_can_check_dynamic_config_exist()
+    {
+        \GetThingsDone\DynamicConfig\Models\DynamicConfig::create([
+            'key' => 'logo',
+            'value' => ['filename' => 'logo.png'],
+        ]);
+
+        $this->assertTrue(app('dynamic_config')->has('logo.filename'));
+    }   
 }
