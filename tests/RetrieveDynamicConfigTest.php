@@ -20,7 +20,7 @@ class RetrieveDynamicConfigTest extends TestCase
             [
                 'logo' => ['filename' => 'logo.png'],
             ],
-            app(DynamicConfig::class)->all()
+            app('dynamic_config')->all()
         );
     }
 
@@ -34,7 +34,7 @@ class RetrieveDynamicConfigTest extends TestCase
 
         $this->assertEquals(
             'logo.png',
-            app(DynamicConfig::class)->get('logo.filename')
+            app('dynamic_config')->get('logo.filename')
         );
     }
 }

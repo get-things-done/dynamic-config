@@ -2,8 +2,9 @@
 
 namespace GetThingsDone\DynamicConfig;
 
-use GetThingsDone\DynamicConfig\Commands\DynamicConfigCommand;
 use Illuminate\Support\ServiceProvider;
+use GetThingsDone\DynamicConfig\DynamicConfig;
+use GetThingsDone\DynamicConfig\Commands\DynamicConfigCommand;
 
 class DynamicConfigServiceProvider extends ServiceProvider
 {
@@ -36,6 +37,10 @@ class DynamicConfigServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/dynamic-config.php', 'dynamic-config');
+
+        $this->app->singleton('dynamic_config', function ($app) {
+            return app(DynamicConfig::class);
+        });
     }
 
     public static function migrationFileExists(string $migrationFileName): bool

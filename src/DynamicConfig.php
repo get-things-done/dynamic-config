@@ -2,19 +2,21 @@
 
 namespace GetThingsDone\DynamicConfig;
 
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Arr;
+use Illuminate\Contracts\Config\Repository;
 
 class DynamicConfig implements Repository
 {
     protected array $config = [];
     
-    public function __construct()
+    public function __construct(\GetThingsDone\DynamicConfig\Models\DynamicConfig $model)
     {
-        $config = \GetThingsDone\DynamicConfig\Models\DynamicConfig::get();
+        $config = $model->get();
         
         $this->config = $config->pluck('key')->combine($config->pluck('value'))->toArray();
     }
+
+    
     /**
      * Determine if the given configuration value exists.
      *
