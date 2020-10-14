@@ -47,5 +47,5 @@ class RetrieveDynamicConfigTest extends TestCase
         ]);
 
         $this->assertTrue(app('dynamic_config')->has('logo.filename'));
-    }   
+    }
 }
