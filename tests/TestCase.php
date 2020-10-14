@@ -2,9 +2,9 @@
 
 namespace GetThingsDone\DynamicConfig\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use GetThingsDone\DynamicConfig\DynamicConfigServiceProvider;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
@@ -36,6 +36,5 @@ class TestCase extends Orchestra
         
         include_once __DIR__.'/../database/migrations/create_dynamic_config_table.php.stub';
         (new \CreateDynamicConfigTable())->up();
-        
     }
 }
