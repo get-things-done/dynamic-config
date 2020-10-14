@@ -11,7 +11,7 @@
          verbose="true"
 >
     <testsuites>
-        <testsuite name="GetThingsDone Test Suite">
+        <testsuite name="GetThingsDone Dynamic Config Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

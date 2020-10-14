@@ -11,7 +11,9 @@ class DynamicConfig implements Repository
     
     public function __construct()
     {
-        $this->config = GetThingsDone\DynamicConfig\Models\DynamicConfig::get()->toArray();
+        $config = \GetThingsDone\DynamicConfig\Models\DynamicConfig::get();
+        
+        $this->config = $config->pluck('key')->combine($config->pluck('value'))->toArray();
     }
     /**
      * Determine if the given configuration value exists.
